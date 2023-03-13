@@ -1,1 +1,3 @@
-# street_network_anaylsis
+---
+permalink: /index.html
+---
