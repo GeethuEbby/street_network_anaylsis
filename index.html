@@ -12,11 +12,11 @@
         <div class="container mt-3">
             <h2>Street Network Analysis</h2>
             
-            <select class="text_select" id="field_6" name="field_6">    
+            <select class="text_select" id="city" name="city">    
             <option value="- Select -">- Select -</option>  
-            <option value="Option One">Varberg, Sweden</option>  
-            <option value="Option Two">Helsinki, Finland</option>  
-            <option value="Option Three">Toronto, Canada</option>  
+            <option value="Varberg">Varberg, Sweden</option>  
+            <option value="Helsinki">Helsinki, Finland</option>  
+            <option value="Toronto">Toronto, Canada</option>  
             </select>
             
             <p>Please select the cities:</p>
@@ -47,11 +47,44 @@
             </div>
         </div>
         
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+        
+        
+        
         <script>
         
         function notEmpty(){
 
-        var e = document.getElementById("field_6");
+        var e = document.getElementById("city");
         var strUser = e.options[e.selectedIndex].value;
         document.getElementById('aggregator_name').innerHTML = strUser;
 
