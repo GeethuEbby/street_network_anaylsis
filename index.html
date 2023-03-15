@@ -11,40 +11,22 @@
     <body>
         <div class="container mt-3">
             <h2>Street Network Analysis</h2>
-            
+            <p>Please select the cities:</p>
             <select class="text_select" id="city" name="city">    
             <option value="- Select -">- Select -</option>  
-            <option value="Varberg">Varberg, Sweden</option>  
-            <option value="Helsinki">Helsinki, Finland</option>  
-            <option value="Toronto">Toronto, Canada</option>  
+            <option value="Varberg, Sweden">Varberg, Sweden</option>  
+            <option value="Helsinki, Finland">Helsinki, Finland</option>  
+            <option value="Toronto, Canada">Toronto, Canada</option>  
             </select>
             
-            <p>Please select the cities:</p>
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#home">Varberg, Sweden</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#menu1">Helsinki, Finland</a></li>
-                <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#menu2">Toronto, Canada</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="home" class="container tab-pane active">
+            
+                <div id="home" class="container">
                     <br />
-                    <h3>Varberg, Sweden</h3>
+                    <h3 id="aggregator_name"></h3>
                     <iframe class="page1" src="map_helsinki.html" title="description" frameborder="0" style="overflow: hidden; height: 580px; width: 100%;"></iframe>
                     <iframe class="page1" src="map_varberg.html" title="description" frameborder="0" style="overflow: hidden; height: 580px; width: 100%;"></iframe>
                     <iframe class="page1" src="map_toronto.html" title="description" frameborder="0" style="overflow: hidden; height: 580px; width: 100%;"></iframe>
                 </div>
-                
-                <div id="menu1" class="container tab-pane fade">
-                    <br />
-                    <h3>Helsinki, Finland</h3>
-                </div>
-                
-                <div id="menu2" class="container tab-pane fade">
-                    <br />
-                    <h3>Toronto, Canada</h3>
-                    
-                </div>
-            </div>
         </div>
         
         <div class="dropdown">
@@ -56,29 +38,7 @@
           </div>
         </div>
 
-        <script>
-        /* When the user clicks on the button, 
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-          if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }
-        </script>
-        
-        
         
         <script>
         
@@ -87,7 +47,6 @@
         var e = document.getElementById("city");
         var strUser = e.options[e.selectedIndex].value;
         document.getElementById('aggregator_name').innerHTML = strUser;
-
         }
         notEmpty()
         document.getElementById("field_6").onchange = notEmpty;
