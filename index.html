@@ -40,11 +40,29 @@
 		<div class="content">
 			<div id="home" class="container tab-pane active">
 				<br />
-				<h3></h3>
+				<h3 id="txt"></h3>
 				<iframe class="iframe-placeholder" src="map_varberg.html" name="myIframe" title="description" frameborder="0" style="overflow: hidden; height: 580px; width: 100%;"></iframe>
 			</div>
         </div>
         </div>
       
+	    
+	        <script>
+            
+            var items = document.querySelectorAll("#list li");
+            
+            for(var i = 0; i < items.length; i++)
+            {
+                items[i].onclick = function(){
+                    
+                    document.getElementById("txt").value = this.innerHTML;
+                    
+                };
+            }
+            
+        </script> 
+	    
+	    
+	    
     </body>
 </html>
